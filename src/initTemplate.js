@@ -15,7 +15,8 @@ const depends = {
   "@reach/router": "^1.3.4",
   "@yxfe/moox": "^1.0.9",
   "react": "^17.0.1",
-  "react-dom": "^17.0.1"
+  "react-dom": "^17.0.1",
+  "moox": "^1.1.0"
 }
 
 module.exports = (srcDir, destDir)=>{
