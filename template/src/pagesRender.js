@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router} from '@reach/router';
 import { render } from 'react-dom';
-import '../assets/pages-render.css'
+import './pages-render.css'
 
 const prefix = (()=>{
   let p = __PROJECT_CONFIG__.prefix;

@@ -9,7 +9,9 @@ module.exports = {
     window: true,
     Promise: true,
     Set: true,
-    document: true
+    document: true,
+    __PROJECT_CONFIG__: true,
+    __PAGES__: true
   },
   plugins: [
     "import"

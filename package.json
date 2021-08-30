@@ -85,6 +85,7 @@
     "moment": "^2.29.1",
     "mos-mss": "^1.1.8",
     "nyc": "^14.1.1",
+    "opack-cli": "0.0.1",
     "postcss": "^8.1.10",
     "postcss-loader": "^4.1.0",
     "progress-bar-webpack-plugin": "^2.1.0",
