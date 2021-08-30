@@ -1,6 +1,6 @@
 {
   "name": "opack-suite-react",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "src/index.js",
   "devDependencies": {
     "@babel/cli": "^7.0.0",
