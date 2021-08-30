@@ -1,5 +1,5 @@
 import pageComponents from '~/.runtime/entryCode'
-import pagesRender from './router'
+import pagesRender from './pagesRender'
 
 /**
  * 渲染多页面
