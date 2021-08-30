@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <%= htmlWebpackPlugin.options.head %>
+    <% for (var cssIndex = 0; cssIndex < htmlWebpackPlugin.files.css.length; cssIndex++) { %>
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[cssIndex] %>">
+    <% } %>
+    <!--注意: head 请勿删除  -->
+    <!--{{head}}-->
+  </head>
+  <body>
+      <div id="root" style="height:100%"></div>
+      <% for (var jsIndex = 0; jsIndex < htmlWebpackPlugin.files.js.length; jsIndex++) { %>
+      <script crossorigin="anonymous"  src="<%= htmlWebpackPlugin.files.js[jsIndex] %>"></script>
+      <% } %>
+      <%= htmlWebpackPlugin.options.body %>
+    <!--{{body}}-->
+    <script>
+      console.log(`该版本代码的发版时间 ：<%=htmlWebpackPlugin.options.versionTime %> `);
+    </script>
+  </body> 
+</html>
+
+    
