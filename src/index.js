@@ -73,6 +73,14 @@ module.exports = {
     const template = path.resolve(__dirname, '../template');
     initProjectFromTemplatePath(template, projectPath);
     shell.cd(projectPath)
+
+    const child = shell.exec(`npm install --no-package-lock`)
+    if (child.code !== 0) {
+      console.error('Program output:', child.stdout);
+      console.error('Program stderr:', child.stderr);
+    } else {
+      console.log(color.green(`npm安装成功`))
+    }
     console.log(require('bash-color').green('初始化完成'))
   },
   dev() {
