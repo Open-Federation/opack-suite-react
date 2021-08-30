@@ -29,12 +29,7 @@
     "cz-emoji-xg": "1.0.3"
   },
   "scripts": {
-    "publish:prod": "lerna publish",
-    "publish:test": "lerna publish --preid=alpha --dist-tag=alpha",
-    "bootstrapandnpminstall": "lerna exec npm install --no-package-lock && lerna link",
-    "bootstrap": "lerna bootstrap",
-    "lint": "eslint 'packages/*/src/**/*.js{,x}'",
-    "precommit": "npm run lint"
+
   },
   "dependencies": {
     "@babel/cli": "^7.0.0",
@@ -109,8 +104,6 @@
     "webpack-parallel-uglify-plugin": "^1.1.2"
   },
   "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-emoji-xg"
-    }
+
   }
 }
