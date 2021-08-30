@@ -1,6 +1,7 @@
 {
-  "name": "root",
-  "private": true,
+  "name": "opack-suite-react",
+  "version": "0.0.1",
+  "main": "src/index.js",
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
