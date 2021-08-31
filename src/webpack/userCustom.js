@@ -1,11 +1,5 @@
 const color = require ('bash-color');
 
-const evns = {
-  production: 'https://managergrocery.meituan.com',
-  staging:  'http://manager.grocery.st.sankuai.com',
-  test: 'http://manager.grocery.test.sankuai.com'
-}
-
 
 function isFile(filepath){
   try{
@@ -17,8 +11,8 @@ function isFile(filepath){
   }
 }
 
-function getCustomProxyConfig(runtimePath){
-  let target = evns.test;
+function getCustomProxyConfig(runtimePath, projectConfig){
+  let target = projectConfig.proxyTarget;
   let proxyCustomConfig = {};
   let mockConfig = {};
   const proxyConfigPath = require('path').resolve(runtimePath, './config.js');
@@ -30,17 +24,6 @@ function getCustomProxyConfig(runtimePath){
   }
 
   let ssoEnv = 'test';
-  const url = require('url').parse(target);
-  const port = url.port;
-  if(port){
-    ssoEnv = 'test';
-  }else{
-    if(url.hostname.indexOf('.st.sankuai.com') !== -1 || url.hostname.indexOf('meituan.com') !== -1){
-      ssoEnv = 'prod';
-    }else{
-      ssoEnv = 'test'
-    }
-  }
 
   if(proxyConfigPath.ssoEnv){
     ssoEnv = proxyConfigPath.ssoEnv;
@@ -57,9 +40,9 @@ function getCustomProxyConfig(runtimePath){
   };
 }
 
-module.exports = (apiPrefix = [], runtimePath) => {
+module.exports = (apiPrefix = [], runtimePath, projectConfig) => {
   /**
-   * target 是代理的域名，示例 http://manager.grocery.test.sankuai.com
+   * target 是代理的域名
    * ssoEnv 指 sso 环境，默认会代理到 test 环境
    * proxyConfig 是用户自定义的代理，可参考 webpack-dev-server proxy
    * {
@@ -72,13 +55,13 @@ module.exports = (apiPrefix = [], runtimePath) => {
    *    /api/xxx: 1
    * }
    */
-  let {target, ssoEnv, proxyConfig, mockConfig} = getCustomProxyConfig(runtimePath);
+  let {target, ssoEnv, proxyConfig, mockConfig} = getCustomProxyConfig(runtimePath, projectConfig);
   function router (req) {
     let keys = Object.keys (mockConfig);
     for (let i = 0; i < keys.length; i++) {
       let key = keys[i];
       if (req.path.indexOf (key) === 0) {
-        return 'http://yapi.sankuai.com';
+        return projectConfig.yapi;
       }
     }
     return target;

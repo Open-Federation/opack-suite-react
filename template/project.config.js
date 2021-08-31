@@ -2,9 +2,7 @@ module.exports = {
   title: 'test',
   key: "test", //项目appkey，请在camel注册
   apiPrefix: ['/api'], // api 代理前缀，devServer 使用
-  sso: {
-    enable: true
-  },
+  proxyTarget: 'https://www.xx.com', //http默认代理地址
   webpackBuild: {
     appends: {
       rules: [],
