@@ -8,7 +8,7 @@ module.exports = ctx=>{
   const {runtimeRootPath, task, srcPath} = runtimeConfig;
   const {server = {}} = projectConfig;
 
-  const userCustomRuntimeConfig = require('./userCustom')(projectConfig.apiPrefix, runtimeRootPath);
+  const userCustomRuntimeConfig = require('./userCustom')(projectConfig.apiPrefix, runtimeRootPath, projectConfig);
   const ssoEnv = userCustomRuntimeConfig.ssoEnv;
 
   if(projectConfig.sso.enable && task === 'dev'){
