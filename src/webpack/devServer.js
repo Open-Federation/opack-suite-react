@@ -5,15 +5,10 @@ const pages = [];
 module.exports = ctx=>{
   const {projectConfig, pagesConfig} = ctx;
   const {runtimeConfig} = projectConfig;
-  const {runtimeRootPath, task, srcPath} = runtimeConfig;
+  const {runtimeRootPath, srcPath} = runtimeConfig;
   const {server = {}} = projectConfig;
 
   const userCustomRuntimeConfig = require('./userCustom')(projectConfig.apiPrefix, runtimeRootPath, projectConfig);
-  const ssoEnv = userCustomRuntimeConfig.ssoEnv;
-
-  if(projectConfig.sso.enable && task === 'dev'){
-    console.log('ssoEnv:', ssoEnv);
-  }
 
   const previewPrefix = (projectConfig.prefix ? projectConfig.prefix.substr(1) : '');
   return {
