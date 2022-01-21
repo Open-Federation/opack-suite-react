@@ -15,7 +15,7 @@ const depends = {
   "@reach/router": "^1.3.4",
   "react": "^17.0.1",
   "react-dom": "^17.0.1",
-  "moox": "^1.1.0",
+  "moox": "^2.0.0",
   "redux": "^4.1.1",
   "react-redux": "^7.2.5"
 }

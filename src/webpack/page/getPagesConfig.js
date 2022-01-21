@@ -38,8 +38,13 @@ module.exports = (projectConfig) => {
       if (!stat.isDirectory()) {
         return;
       }
-      let configFilePath = path.resolve(dirs, file, 'page.config.js');
-      if (!isFile(configFilePath)) return;
+      let configFilePath = path.resolve(dirs, file, 'page.config.json');
+      if (!isFile(configFilePath)) {
+        configFilePath = path.resolve(dirs, file, 'page.config.js');
+        if (!isFile(configFilePath)) {
+          return;
+        };
+      };
       if (!/^[a-z\\-]+$/.test(file)) {
         throw new Error('当前page:' + file + ', Page 路径只能由『小写字母，-』组成')
       }

@@ -1,6 +1,6 @@
 {
   "name": "opack-suite-react",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "main": "src/index.js",
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -28,9 +28,7 @@
     "precommit": "^1.2.2",
     "cz-emoji-xg": "1.0.3"
   },
-  "scripts": {
-
-  },
+  "scripts": {},
   "dependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
@@ -103,7 +101,5 @@
     "webpack-hot-middleware": "^2.25.0",
     "webpack-parallel-uglify-plugin": "^1.1.2"
   },
-  "config": {
-
-  }
+  "config": {}
 }

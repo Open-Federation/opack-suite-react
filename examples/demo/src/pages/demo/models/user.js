@@ -5,29 +5,31 @@ const config = {
     filterText: ''
   },
 
-  changeCurrentEditUserAction: function (draftState, params) {
-    draftState.list[params.index] = params.name;
-  },
-  /**
-   * paramsTypes = {
-   *  text: filterText
-   * }
-   */
-  changeFilterValueAction: function (draftState, params) {
-    draftState.filterText = params.text;
-  },
-  changeEditIndexAction: function (draftState, params) {
-    draftState.currentEditIndex = params.index;
-  },
-  addUserAction: function (draftState) {
-    draftState.list.push(getRandomName());
-    draftState.status = 0;
-  },
-  requestStatusAction: function (draftState) {
-    draftState.status = 1;
-  },
-  delUserAction: function (draftState, params) {
-    draftState.list.splice(params.index, 1);
+  actions: {
+    changeCurrentEditUserAction: function (draftState, params) {
+      draftState.list[params.index] = params.name;
+    },
+    /**
+     * paramsTypes = {
+     *  text: filterText
+     * }
+     */
+    changeFilterValueAction: function (draftState, params) {
+      draftState.filterText = params.text;
+    },
+    changeEditIndexAction: function (draftState, params) {
+      draftState.currentEditIndex = params.index;
+    },
+    addUserAction: function (draftState) {
+      draftState.list.push(getRandomName());
+      draftState.status = 0;
+    },
+    requestStatusAction: function (draftState) {
+      draftState.status = 1;
+    },
+    delUserAction: function (draftState, params) {
+      draftState.list.splice(params.index, 1);
+    }
   }
 };
 

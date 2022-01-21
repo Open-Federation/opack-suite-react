@@ -1,8 +1,7 @@
 import user from './user'
+import moox from 'moox'
 
-const {pageStore} = window.magpie;
-
-export default pageStore({
+export default moox({
   user
 })
 
